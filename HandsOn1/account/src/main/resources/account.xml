@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cust1" class="com.cognizant.account.model.Account"
+		scope="prototype">
+		<property name="number" value="115" />
+		<property name="type" value="Savings" />
+		<property name="balance" value="180005" />
+
+	</bean>
+	<bean id="cust2" class="com.cognizant.account.model.Account"
+		scope="prototype">
+		<property name="number" value="116" />
+		<property name="type" value="Savings" />
+		<property name="balance" value="180005" />
+
+	</bean>
+	<bean id="cust3" class="com.cognizant.account.model.Account"
+		scope="prototype">
+		<property name="number" value="117" />
+		<property name="type" value="Curreent" />
+		<property name="balance" value="180005" />
+
+	</bean>
+
+	<bean id="accountList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="cust1"></ref>
+				<ref bean="cust2"></ref>
+				<ref bean="cust3"></ref>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>

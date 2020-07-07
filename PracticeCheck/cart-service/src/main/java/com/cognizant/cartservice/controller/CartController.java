@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.cognizant.cartservice.model.MenuItem;
 import com.cognizant.cartservice.service.CartServiceImpl;
 
 @RestController
@@ -26,7 +27,7 @@ public class CartController {
 	}
 	
 	@GetMapping("/{userId}")
-	public List<Integer> getAllCartItems(@PathVariable int userId){
+	public List<MenuItem> getAllCartItems(@PathVariable int userId){
 		return cartServiceImpl.getAllCartItems(userId);
 	}
 

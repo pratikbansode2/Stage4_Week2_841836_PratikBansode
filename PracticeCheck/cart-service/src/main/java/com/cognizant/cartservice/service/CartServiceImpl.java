@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.cognizant.cartservice.dao.CartDao;
 import com.cognizant.cartservice.dao.CartDaoCollectionImpl;
 import com.cognizant.cartservice.exception.CartEmptyException;
+import com.cognizant.cartservice.model.MenuItem;
 
 @Service
 public class CartServiceImpl implements CartService{
@@ -28,7 +29,7 @@ public class CartServiceImpl implements CartService{
 //	}
 
 	@Override
-	public List<Integer> getAllCartItems(int userId) throws CartEmptyException {
+	public List<MenuItem> getAllCartItems(int userId) throws CartEmptyException {
 		// TODO Auto-generated method stub
 		return cartDaoCollectionImpl.getAllCartItems(userId);
 	}

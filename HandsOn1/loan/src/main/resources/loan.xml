@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="cust1" class="com.cognizant.loan.model.Loan"
+		scope="prototype">
+		<property name="number" value="115" />
+		<property name="type" value="car" />
+		<property name="loan" value="40000" />
+		<property name="emi" value="4000" />
+		<property name="tenure" value="10" />
+
+	</bean>
+	<bean id="cust2" class="com.cognizant.loan.model.Loan"
+		scope="prototype">
+		<property name="number" value="116" />
+		<property name="type" value="car" />
+		<property name="loan" value="40000" />
+		<property name="emi" value="4000" />
+		<property name="tenure" value="10" />
+
+	</bean>
+	<bean id="cust3" class="com.cognizant.loan.model.Loan"
+		scope="prototype">
+		<property name="number" value="117" />
+		<property name="type" value="home" />
+		<property name="loan" value="4000000" />
+		<property name="emi" value="40000" />
+		<property name="tenure" value="10" />
+
+	</bean>
+	<bean id="loanList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<ref bean="cust1"></ref>
+				<ref bean="cust2"></ref>
+				<ref bean="cust3"></ref>
+			</list>
+		</constructor-arg>
+	</bean>
+</beans>
